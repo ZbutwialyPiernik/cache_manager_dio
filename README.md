@@ -1,6 +1,5 @@
 # cache_manager_dio
 
-Simple extension for flutter_cache_manager that uses dio as http client
 Simple extension for [flutter_cache_manager](https://pub.dev/packages/flutter_cache_manager) that uses [dio](https://pub.dev/packages/dio) as http client.
 
 Most things are done in the background, the extension itself adds, using Dio as the Http client the possibility of simpler cache manager configuration, which is not possible using the default implementation of CacheManager.
