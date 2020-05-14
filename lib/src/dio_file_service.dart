@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cache_manager_dio/src/dio_cache_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutter_cache_manager/src/web/mime_converter.dart';
 import 'package:path/path.dart' as path;
 
 class DioFileService extends FileService {

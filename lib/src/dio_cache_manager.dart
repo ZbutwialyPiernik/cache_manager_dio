@@ -25,6 +25,7 @@ class Settings {
   /// Describes how http headers are treated
   /// [HeaderPolicy.Merge]: default headers have lower priority and are merged with those passed in [CacheManager] function
   /// [HeaderPolicy.Replace]: default headers are replaced with those passsed in [CacheManager] function
+  /// Default value: HeaderPolicy.Merge
   HeaderPolicy headerPolicy;
 
   Settings(
