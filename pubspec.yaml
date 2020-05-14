@@ -1,0 +1,21 @@
+name: cache_manager_dio
+description: Custom cache manager that uses Dio as an HTTP client
+version: 0.1.0
+author: ZbutwialyPiernik
+homepage: https://github.com/ZbutwialyPiernik
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dio: ^3.0.9
+  flutter_cache_manager: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.14.3
+  mockito: ^4.1.1
