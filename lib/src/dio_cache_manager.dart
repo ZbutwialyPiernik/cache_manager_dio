@@ -40,9 +40,9 @@ class DioCacheManager extends BaseCacheManager {
   final Settings settings;
   final Dio dio;
 
-  DioCacheManager(this.dio, {settings})
-      : this.settings = settings ?? Settings(),
-        assert(dio != null),
+  DioCacheManager(this.dio, this.settings)
+      : assert(dio != null),
+        assert(settings != null),
         super(settings.cacheKey, fileService: DioFileService(dio, settings));
 
   @override
