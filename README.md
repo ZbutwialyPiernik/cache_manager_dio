@@ -1,17 +1,6 @@
 # cache_manager_dio
 
-A new Flutter package project.
-
-## Getting Started
-
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Simple extension for flutter_cache_manager that uses dio as http client
 Simple extension for [flutter_cache_manager](https://pub.dev/packages/flutter_cache_manager) that uses [dio](https://pub.dev/packages/dio) as http client.
 
 Most things are done in the background, the extension itself adds, using Dio as the Http client the possibility of simpler cache manager configuration, which is not possible using the default implementation of CacheManager.
@@ -28,7 +17,6 @@ final settings = Settings(headers: {
   "Authorization": "Bearer MY_TOKEN",
   ...
 })
-
 DioCacheManager(Dio(), settings)
 ```
 
@@ -36,15 +24,12 @@ DioCacheManager(Dio(), settings)
 
 ```Dart
 final Dio = Dio();
-
 dio.interceptors.add(InterceptorsWrapper(
   onRequest: (RequestOptions options) async {
     options.headers['Authorization'] = "Bearer MY_TOKEN";
-
     return options;
   },
 ));
-
 DioCacheManager(Dio(), settings);
 ```
 
@@ -55,18 +40,14 @@ class Settings {
   /// Cache duration, can be overriden by http headers when [allowHttpCacheHeaders] is true
   /// Default value: 7 days.
   Duration cacheDuration;
-
   /// Indicates if cache manager should respect http cache headers
   /// Default value: true.
   bool allowHttpCacheHeaders;
-
   /// Name of folder in temponary directory
   /// Default value: 'DioCacheManager'
   String cacheKey;
-
   /// Default request headers with lower priority than passed in [CacheManager] function
   Map<String, String> headers;
-
   /// Describes how http headers are treated
   /// [HeaderPolicy.Merge]: default headers have lower priority and are merged with those passed in [CacheManager] function
   /// [HeaderPolicy.Replace]: default headers are replaced with those passsed in [CacheManager] function
